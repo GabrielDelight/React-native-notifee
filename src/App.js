@@ -1,13 +1,17 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useEffect} from 'react';
 import notifee from '@notifee/react-native';
 
 const App = () => {
-  useEffect(() => {
-    notifee.setBadgeCount(100).then(() => console.log('Badge count set!'));
-  }, []);
 
-  async function onTriggerHandler() {}
+
+  async function onTriggerHandler() {
+    notifee.displayNotification({
+      body: 'Custom sound',
+      ios: {
+        sound: "default",
+      },
+    });
+  }
 
   return (
     <View style={styles.body}>
