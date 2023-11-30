@@ -1,24 +1,13 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import notifee from '@notifee/react-native';
 
 const App = () => {
+  useEffect(() => {
+    notifee.setBadgeCount(100).then(() => console.log('Badge count set!'));
+  }, []);
 
-  async function onTriggerHandler() {
-    notifee.displayNotification({
-      title: 'Penguin bird was uploaded.',
-      body: "You've been successful in posting your Penguin bird picture online.",
-      ios: {
-        attachments: [
-          {
-            url: 'https://d3bg7r0nxumtp2.cloudfront.net/3d8ff55e27d71d6e47d6f4608eb4b4fa8f52fd22.jpg',
-          },
-     
-        ],
-      },
-    });
-
-  }
+  async function onTriggerHandler() {}
 
   return (
     <View style={styles.body}>
