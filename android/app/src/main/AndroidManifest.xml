@@ -29,11 +29,4 @@
         </intent-filter>
       </activity>
 
-      <!-- Secret key from my secnd gmail for google map integration -->
-<meta-data
-     android:name="com.google.android.geo.API_KEY"
-     android:value="AIzaSyD5ie35JXCu1qzjHQE0iN-exMkma1Azbog"/>
 
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
-    </application>
-</manifest>
