@@ -1,54 +1,53 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import notifee from "@notifee/react-native";
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import notifee from '@notifee/react-native';
 
 const App = () => {
-  async function onTriggerHandler(){
-    await notifee.displayNotification({
-      id: "1",
-      title: `New message in chat`,
-      body: "You received a new message from Mike.",
+
+  async function onTriggerHandler() {
+    notifee.displayNotification({
+      title: 'Penguin bird was uploaded.',
+      body: "You've been successful in posting your Penguin bird picture online.",
+      ios: {
+        attachments: [
+          {
+            url: 'https://d3bg7r0nxumtp2.cloudfront.net/3d8ff55e27d71d6e47d6f4608eb4b4fa8f52fd22.jpg',
+          },
+     
+        ],
+      },
     });
 
-    await notifee.displayNotification({
-      id: "2",
-      title: `App update`,
-      body: "Please update your app from the App Store as it is outdated.",
-    });
   }
-
 
   return (
     <View style={styles.body}>
-      <TouchableOpacity style={styles.button} onPress={onTriggerHandler} >
-        <Text style={styles.btn_text}>New message</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={onTriggerHandler} >
-        <Text style={styles.btn_text}>App update</Text>
+      <TouchableOpacity style={styles.button} onPress={onTriggerHandler}>
+        <Text style={styles.btn_text}>Display</Text>
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export default App
+export default App;
 
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: "#ddd",
+    backgroundColor: 'black',
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    justifyContent: "space-around"
+    justifyContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-around',
   },
   button: {
     width: 200,
-    backgroundColor: "hotpink",
+    backgroundColor: 'hotpink',
     padding: 20,
-    alignItems: "center",
-    borderRadius: 20
+    alignItems: 'center',
+    borderRadius: 20,
   },
   btn_text: {
     fontSize: 20,
-    color: "white"
-  }
-})
+    color: 'white',
+  },
+});
