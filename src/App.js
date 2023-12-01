@@ -15,6 +15,7 @@ const App = () => {
           {
             id: 'reject',
             title: 'Reject user',
+            destructive: true
           },
         ],
       },
