@@ -3,12 +3,32 @@ import notifee from '@notifee/react-native';
 
 const App = () => {
 
+  async function setCategories() {
+    await notifee.setNotificationCategories([
+      {
+        id: 'action',
+        actions: [
+          {
+            id: 'accept',
+            title: 'Accept user',
+          },
+          {
+            id: 'reject',
+            title: 'Reject user',
+          },
+        ],
+      },
+    ]);
+  }
+  setCategories()
+  
 
   async function onTriggerHandler() {
     notifee.displayNotification({
-      body: 'Custom sound',
+      title: 'New member request',
+      body: "Hello Administrator, a new member is interested in participating in the chat discussion.",
       ios: {
-        sound: "default",
+        categoryId: 'action',
       },
     });
   }
