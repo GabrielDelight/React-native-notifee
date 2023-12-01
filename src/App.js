@@ -11,6 +11,7 @@ const App = () => {
           {
             id: 'accept',
             title: 'Accept user',
+            input: true,
           },
           {
             id: 'reject',
